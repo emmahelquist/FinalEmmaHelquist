@@ -131,3 +131,4 @@
 /Users/test/Desktop/413Final/backend/413Final.API/obj/Debug/net8.0/413Final.API.pdb
 /Users/test/Desktop/413Final/backend/413Final.API/obj/Debug/net8.0/413Final.API.genruntimeconfig.cache
 /Users/test/Desktop/413Final/backend/413Final.API/obj/Debug/net8.0/ref/413Final.API.dll
+/Users/test/Desktop/413Final/backend/413Final.API/obj/Debug/net8.0/413Final.API.sourcelink.json

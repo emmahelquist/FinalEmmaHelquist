@@ -108,7 +108,19 @@ namespace _413Final.API.Controllers
             return Ok(existingEntertainer);
         }
 
+        [HttpDelete("DeleteEntertainer/{id}")]
+        public IActionResult DeleteEntertainer(int id)
+        {
+            var entertainer = _EntertainerContext.Entertainers.FirstOrDefault(e => e.EntertainerId == id);
+            if (entertainer == null)
+            {
+                return NotFound(new { message = "Entertainer not found." });
+            }
 
+            _EntertainerContext.Entertainers.Remove(entertainer);
+            _EntertainerContext.SaveChanges();
+            return Ok(new { message = "Entertainer deleted successfully." });
+        }
     }
 }
 

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { addEntertainer } from '../api/EntertainerAPI';
 import { EntertainerAddRequest } from '../../types/entertainer'; // Correct import
 
+// This component is used to add a new entertainer
 interface EntertainerAddFormProps {
   onSuccess: () => void;
   onCancel: () => void;
@@ -26,10 +27,12 @@ const EntertainerAddForm: React.FC<EntertainerAddFormProps> = ({
     dateEntered: '',
   });
 
+  // Function to handle input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Function to handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {

@@ -4,6 +4,7 @@ import { Entertainer, EntertainerAddRequest } from '../../types/entertainer'; //
 
 const API_URL = 'http://localhost:5142/api/entertainer'; // Replace with your actual API URL
 
+// Add
 export const addEntertainer = async (
   newEntertainer: EntertainerAddRequest
 ): Promise<any> => {
@@ -46,6 +47,7 @@ export const getEntertainerById = async (id: number): Promise<Entertainer> => {
   }
 };
 
+// Edit
 export const updateEntertainer = async (
   id: number,
   entertainer: EntertainerAddRequest
@@ -71,4 +73,21 @@ export const updateEntertainer = async (
   }
 };
 
-// Add other API calls as needed (fetchEntertainers, etc.)
+// Delete
+export const deleteEntertainer = async (id: number): Promise<any> => {
+  try {
+    const response = await fetch(`${API_URL}/DeleteEntertainer/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (!response.ok) {
+      throw new Error(
+        `Failed to delete entertainer. Status: ${response.status}`
+      );
+    }
+    return await response.json(); // Or handle response as needed
+  } catch (error) {
+    console.error('Error deleting entertainer:', error);
+    throw error;
+  }
+};
